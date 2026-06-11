@@ -1,0 +1,209 @@
+==============================================================================
+BIZON LABS WEBSITE - EDIT CHANGELOG
+==============================================================================
+Purpose: A reproducible, plain-language record of every change made to this
+repository during the redesign project, so any step can be understood and
+reproduced.
+
+Repository: github.com/Zinelis/bizonlabs-website (FORK - the original
+CedricDevos/bizonlabs-website is never touched).
+Working copy: local clone, branch "main". No commits/pushes are made without
+explicit approval.
+
+Overall goal: Improve the site into a clean, light, premium look inspired by
+lila.ai and loopsio.com, while keeping the team fully anonymous (no names,
+no photos, no personal links).
+
+==============================================================================
+PHASE 1 - SAFE CLEANUP  (Date: 2026-06-11)
+==============================================================================
+Direction approved: light & premium (LILA-style). Cleanup done before redesign.
+
+------------------------------------------------------------------------------
+1.0  Created this changelog file (CHANGELOG_edits.txt).
+     - Why: Agreed-upon reproducible record of all edits.
+
+------------------------------------------------------------------------------
+1.1  team.html - removed all individual identities; added collective statement.
+     - Removed the 3 named team cards (Peter Sagmeister, Cedric Devos,
+       Aniket Udepurkar), including their photos and personal LinkedIn links.
+     - Replaced them with an anonymous, collective "Our Team" statement plus a
+       3-item strengths block (Process & Automation; Mixing & Scale-up;
+       Microfluidics & LNP Structure) and an anonymous combined-credentials line.
+     - Removed the broken "Case Studies" nav link (case-studies.html does not exist).
+     - Removed the duplicate <footer> (file previously had two); kept one footer
+       with copyright + Privacy Policy link.
+     - Viewport: removed "user-scalable=no" (now allows pinch-zoom).
+     - Method: file rewritten cleanly, preserving the Story and Location sections.
+
+1.2  index.html
+     - Get in touch > Social: removed the 3 personal LinkedIn links; replaced with
+       a single company LinkedIn placeholder (href="#", to be filled in later).
+     - Technology section: removed the "Learn more" button that linked to the
+       leftover template demo page generic.html.
+     - Removed the first duplicate/malformed <footer> block (kept the later footer
+       that includes the Privacy Policy link).
+     - Viewport: removed "user-scalable=no".
+
+1.3  privacy.html
+     - Removed the broken "Case Studies" nav link.
+     - Viewport: removed "user-scalable=no".
+
+1.4  Archived leftover/unused files (moved with `git mv`, NOT deleted) into _archive/:
+     - generic.html, elements.html, index_old.html (HTML5 UP template demo pages).
+     - images/Peter.png, images/Cedric.png, images/Aniket.png (team headshots).
+     - images/pic_bisonsv2.jpg (9.5 MB, confirmed unreferenced by any page).
+     - Note: nothing on the live site links to _archive/, so these will not appear
+       on the published site. They remain in the repo for reference.
+
+1.5  index.html - homepage Team blurb anonymized further.
+     - Changed "We are three postdoctoral researchers at the Massachusetts
+       Institute of Technology..." to "We are a team of postdoctoral
+       researchers at the Massachusetts Institute of Technology...".
+     - Why: removes the head-count (better anonymity) and matches team.html wording.
+
+------------------------------------------------------------------------------
+End of Phase 1. No git commit/push performed. All changes are local only.
+
+==============================================================================
+PHASE 2 - LIGHT / PREMIUM REDESIGN (LILA-inspired)  (Date: 2026-06-11)
+==============================================================================
+Approved direction: light & premium; sticky top nav; Inter font everywhere;
+implementation via a reversible "theme layer" (new theme.css loaded after the
+existing main.css), NOT a from-scratch rewrite.
+
+------------------------------------------------------------------------------
+2.1  Step 1 - Design system + fonts.
+     - Created assets/css/theme.css: defines the light design system as CSS
+       variables (palette, spacing, radius, shadow) and overrides the dark
+       Hyperspace template for base elements:
+         * Background -> white (#fff) / soft (#f6f8fa); text -> slate (#3a4654);
+           headings -> near-black (#0e1116).
+         * Brand accent teal #0ecfb0 (matches the existing LNP particle color).
+         * Inter typography; modernized headings, links, buttons (teal, rounded).
+         * Light sections (.wrapper styleN), light sidebar/header, deep ink-blue
+           footer (#0b2545).
+         * Basic hero flex layout; styling for the Phase 1 .team-strengths block.
+       This file is fully reversible: removing its <link> reverts to the original.
+     - Edited <head> of index.html, team.html, privacy.html:
+         * Added Google Fonts preconnect + Inter stylesheet link.
+         * Added <link rel="stylesheet" href="assets/css/theme.css"> AFTER main.css.
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+2.2  DIRECTION CHANGE - full from-scratch homepage rebuild (per request).
+     The theme-layer approach (2.1) was too subtle. Switched to a complete,
+     self-contained redesign of the homepage that does NOT depend on the old
+     HTML5 UP template CSS.
+
+     - Created assets/css/site.css: a complete modern design system (tokens,
+       reset, typography with clamp(), buttons, sticky nav, hero with gradient
+       glows, stat bar, feature cards, dark metrics band, team teaser, CTA band,
+       footer, scroll-reveal, full responsive/mobile rules).
+     - Rebuilt index.html from scratch using site.css (no longer links main.css
+       or theme.css). New structure:
+         * Sticky top navigation + mobile menu (replaces the old sidebar).
+         * Hero: large headline, gradient highlight, LNP image with glow and a
+           floating "3x" stat card, two CTAs.
+         * Stat bar (4 KPIs), Technology (4 feature cards w/ inline SVG icons),
+           Approach statement (bison metaphor), dark Metrics band (3 cards),
+           anonymous Team teaser with skill chips, CTA band, multi-column footer.
+         * Added SEO meta description + Open Graph tags + inline SVG favicon.
+         * Added lightweight vanilla JS (no jQuery): sticky-header on scroll,
+           mobile menu toggle, IntersectionObserver scroll-reveal.
+     - Team content remains fully anonymous (no names/photos/personal links).
+     - Note: index.html no longer uses assets/css/main.css or theme.css. Those
+       files remain for team.html / privacy.html until they are rebuilt next.
+
+2.3  Rebuilt team.html and privacy.html on the new site.css system.
+     - Added .page-hero and .prose styles to site.css for content pages.
+     - team.html: new sticky nav + page hero + Story (prose) + anonymous Team
+       (3 expertise cards + combined-credentials line, NO names/photos/links)
+       + "Based at MIT" CTA + new footer. Added meta description.
+     - privacy.html: new sticky nav + page hero + prose policy content + footer.
+     - Both pages now link section anchors back to index.html (e.g.
+       index.html#technology) and share the same header/footer/JS.
+     - Result: the whole site (index, team, privacy) is now visually consistent
+       on the new design system.
+     - NOTE: assets/css/theme.css (from step 2.1) is now unused/orphaned, and
+       assets/css/main.css + noscript.css are no longer used by the live pages
+       (still referenced only by the archived files in _archive/). Left in place
+       for now; can be archived/removed in a later cleanup if desired.
+
+2.4  Elevation pass + bug fix (reviewed via headless-Chrome screenshots).
+     - BUG FIX: the mobile navigation menu was visible on desktop (its links
+       leaked to the top-left corner). Root cause: ".mobile-menu { display:none }"
+       was only declared inside the <=720px media query, so on wider screens it
+       defaulted to visible. Added a global ".mobile-menu { display:none }" so it
+       only appears on mobile when toggled open.
+     - index.html / site.css elevation:
+         * Hero: added a trust line "Founded by postdoctoral researchers at MIT",
+           a second floating metric card (40-450 nm), heavier headline weight,
+           a little more top spacing.
+         * Feature cards: added faint corner index numbers (01-04), an animated
+           top accent bar on hover, refined hover state.
+         * Stat bar: prevented awkward number wrapping.
+     - Verified desktop + mobile rendering with screenshots; white text confirmed
+       to appear ONLY on the intentionally dark sections (metrics band, CTA,
+       footer) on dark backgrounds; all body content is dark-on-light.
+
+2.5  Added two new homepage sections + motion (further elevation).
+     - "How it works" process section (#process): 4 numbered steps
+       (Tune / Form / Scale / Predict) with a gradient connector line.
+     - "Applications" section (#applications): 6-card grid of target modalities
+       (mRNA, gene editing, cell therapy, rare disease, saRNA, process dev).
+     - Added staggered scroll-reveal (.d1-.d4 delay classes) to the feature
+       cards, process steps, application cards, and metrics cards.
+     - Nav updated: replaced "Approach" link with "Applications" (desktop +
+       mobile). New sections are fully responsive (4->2->1 / 3->2->1 columns).
+     - site.css: added .process/.steps, .apps/.app, and reveal-delay styles,
+       plus matching responsive rules.
+
+2.6  Investor/partner-focused pass: lighter look + credibility + FAQ + form.
+     - LIGHTENED THE LOOK: replaced the dark "By the numbers" metrics band with a
+       light "Research foundation" credibility section (white cards on soft bg).
+       The footer is now the only dark area; CTA accents are teal. This addresses
+       the earlier "why white fonts" concern and reads more open/premium.
+     - Animated counters: the credibility numbers count up on scroll
+       (50+ publications, 800+ citations, 100+ conference talks, 3x expression)
+       via a small IntersectionObserver + requestAnimationFrame (data-count).
+     - Added an FAQ section (#faq): accessible <details>/<summary> accordion with
+       five investor/partner/customer questions.
+     - Added a real Contact section (#contact): two-column layout with contact
+       details (email, location, stage) + a styled contact FORM
+       (name, email, organization, message).
+       IMPORTANT: the form's action is a PLACEHOLDER
+       (https://formspree.io/f/REPLACE_WITH_FORM_ID). It will not deliver
+       messages until a real endpoint is set (e.g. a free Formspree form) OR it
+       is re-pointed to a mailto/handler. The email fallback is shown beneath it.
+     - BUG FIX: the "How it works" steps were stacking vertically because the CSS
+       targeted ".process" (class) while the section used id="process". Added the
+       "process" class so the 4-column step layout + connector line render.
+     - site.css: added .credibility/.cred-grid, .faq, and .contact/.form styles
+       plus responsive rules.
+
+2.7  Messaging cleanup + brand logomark + hero motion.
+     - Removed company-stage messaging (owner request): deleted the
+       "What stage is the company at?" FAQ item; removed the word
+       "preincorporation" from index.html (contact "Stage" -> "Origin: Founded
+       at MIT") and from team.html (Location paragraph). Verified none remain.
+     - Custom brand logomark: replaced the plain dot with an inline SVG
+       "particle" mark (core + orbiting nodes + ring) in the nav and footer of
+       all three pages (teal in nav, bright teal in footer).
+     - Hero motion: added animated orbital rings around the LNP image and a gentle
+       floating animation on the two hero metric cards. Respects
+       prefers-reduced-motion (animations disabled for users who request it).
+     - site.css: added .logo, .hero-orbit, floaty/spin keyframes, and the
+       reduced-motion media query.
+
+------------------------------------------------------------------------------
+Phase 2 NOT done yet (next steps):
+  - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
+    (Formspree/Getform) and the real company LinkedIn URL.
+  - Optional: real/custom hero imagery, image optimization.
+  - Optional cleanup: archive now-unused theme.css / main.css / metrics styles.
+  - Final cross-browser QA; deploy via GitHub Pages when ready.
+  No git commit/push performed. All changes are local only.
+  (Temp review screenshots under ../.shots/ (workspace root) can be deleted.)
+------------------------------------------------------------------------------
+
