@@ -196,14 +196,30 @@ existing main.css), NOT a from-scratch rewrite.
      - site.css: added .logo, .hero-orbit, floaty/spin keyframes, and the
        reduced-motion media query.
 
+3.0  Published a shareable PREVIEW from the fork (owner request).
+     - Scope: ONLY the fork Zinelis/bizonlabs-website. The original
+       CedricDevos/bizonlabs-website was NOT touched. Verified the fork's only
+       git remote is origin = Zinelis fork.
+     - Removed the CNAME file FROM THE FORK ONLY. Reason: the CNAME (bizonlabs.com)
+       is owned/served by the ORIGINAL repo's Pages. Keeping it would make the
+       fork's preview try to claim the live domain. Removing it gives a clean,
+       separate preview URL and cannot affect the live bizonlabs.com site.
+     - Committed all redesign work (index/team/privacy + site.css + this log +
+       archived files) and pushed to fork main (commit 74df335).
+     - Enabled GitHub Pages on the fork: source = main branch, root (/).
+     - LIVE PREVIEW URL: https://zinelis.github.io/bizonlabs-website/
+       Verified 200 OK for /, /team.html, /privacy.html, site.css, images/LNP.png.
+     - This is a PREVIEW only; it does not change the live bizonlabs.com.
+
 ------------------------------------------------------------------------------
-Phase 2 NOT done yet (next steps):
+Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
     (Formspree/Getform) and the real company LinkedIn URL.
   - Optional: real/custom hero imagery, image optimization.
   - Optional cleanup: archive now-unused theme.css / main.css / metrics styles.
-  - Final cross-browser QA; deploy via GitHub Pages when ready.
-  No git commit/push performed. All changes are local only.
+  - Final cross-browser QA.
+  - When ready to go live on bizonlabs.com, that change must be made in the
+    ORIGINAL repo by its owner (not done here).
   (Temp review screenshots under ../.shots/ (workspace root) can be deleted.)
 ------------------------------------------------------------------------------
 
