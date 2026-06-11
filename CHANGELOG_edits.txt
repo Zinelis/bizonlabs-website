@@ -211,6 +211,11 @@ existing main.css), NOT a from-scratch rewrite.
        Verified 200 OK for /, /team.html, /privacy.html, site.css, images/LNP.png.
      - This is a PREVIEW only; it does not change the live bizonlabs.com.
 
+3.1  Wording: changed page title/OG title in index.html from
+     "Precision Lipid Nanoparticle Engineering" to
+     "Precise Lipid Nanoparticle Engineering" (owner request). Other
+     precision/precise wording left unchanged. Pushed to fork + live preview.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
