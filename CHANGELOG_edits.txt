@@ -308,6 +308,10 @@ existing main.css), NOT a from-scratch rewrite.
        The internal/HR-oriented beliefs (ownership, celebrating success, team
        culture) were also held back for a future Careers/Culture page.
 
+7.1  Owner request: removed the four "What we believe" tick-bullets from the
+     mission band on both homepages (too visually heavy). Kept the mission
+     statement, character chips, and the "THINK · BUILD" motto.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
