@@ -216,6 +216,27 @@ existing main.css), NOT a from-scratch rewrite.
      "Precise Lipid Nanoparticle Engineering" (owner request). Other
      precision/precise wording left unchanged. Pushed to fork + live preview.
 
+4.0  (Considered & reverted) A large "Tier 1 + Tier 2" B2B upgrade was built
+     locally (audience router, evidence/publications + awards placeholders,
+     platform/mechanism schematic, mid-page CTA band). Owner preferred the
+     existing elegant version (Percepta-aligned) and asked for SUBTLE tailoring
+     instead. The heavy upgrade was NEVER published and was fully reverted
+     (git checkout of index.html + site.css to the live version). site.css is
+     unchanged from the live version.
+
+4.1  Subtle B2B tailoring (owner request) — index.html copy only, no structural
+     or CSS changes, soft/elegant CTAs kept ("Get in touch", "Explore the
+     technology"). Quietly orients the site toward biotech drug-development teams
+     without overt audience segmentation:
+     - Hero lead: softened "the only technology" -> "has developed technology";
+       added "giving development teams reproducible control".
+     - Applications intro: now "Teams developing genetic medicines rely on
+       precise, reproducible control ... from discovery through scale-up."
+     - Contact lead: now "Whether you're advancing a therapeutic program,
+       exploring a partnership, or evaluating an investment ..." (leads with the
+       drug-development audience).
+     Not yet published (local only) pending owner approval.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
