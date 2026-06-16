@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Bizon Labs — DARK THEME (comparison build)
+   Load AFTER site.css. Overrides design tokens + the surfaces that were
+   hard-coded light, so we can compare a dark look against the white one.
+   This file does not affect the current white site (only index-dark.html
+   links it).
+   ========================================================================== */
+
+:root {
+	--ink:         #0c1730;
+	--ink-2:       #0a1226;
+	--text:        #aeb9c9;
+	--text-strong: #f2f6fb;
+	--muted:       #8595a8;
+	--bg:          #070c16;
+	--bg-soft:     #0d1424;
+	--bg-soft-2:   #141d31;
+	--border:      rgba(255, 255, 255, 0.10);
+	--shadow-sm:   0 4px 14px rgba(0, 0, 0, 0.45);
+	--shadow:      0 18px 50px rgba(0, 0, 0, 0.55);
+	--shadow-lg:   0 30px 70px rgba(0, 0, 0, 0.65);
+}
+
+/* Surfaces that were hard-coded white -> raised dark panels */
+.card,
+.app,
+.cred,
+.faq-item,
+.hero-card,
+.form,
+.bz-consent { background: var(--bg-soft-2); border-color: var(--border); }
+
+/* Form fields a touch darker than their panel */
+.field input,
+.field textarea { background: rgba(255, 255, 255, 0.04); border-color: var(--border); color: var(--text-strong); }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--muted); }
+
+/* Header */
+.site-header.scrolled { background: rgba(7, 12, 22, 0.82); border-bottom-color: var(--border); }
+.site-header.menu-open { background: var(--bg); }
+.mobile-menu.open { background: var(--bg); border-bottom-color: var(--border); }
+.mobile-menu a { color: var(--text-strong); }
+
+/* Accents read brighter on dark */
+.hero-badge { color: var(--accent-bright); border-color: rgba(24, 216, 185, 0.32); background: rgba(15, 191, 163, 0.12); }
+.eyebrow { color: var(--accent-bright); }
+.statement em { color: var(--accent-bright); }
+.cred .n { color: var(--accent-bright); }
+
+/* Card hover number badge slightly brighter */
+.card:hover .num-badge { color: rgba(24, 216, 185, 0.5); }
+
+/* Footer keeps a distinct dark navy so it separates from the body */
+.site-footer { background: var(--ink); border-top: 1px solid var(--border); }
+
+/* Soften the hero glows so they don't blow out on dark */
+.hero::before { opacity: 0.6; }
+.hero::after { opacity: 0.7; }

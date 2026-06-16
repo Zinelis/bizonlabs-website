@@ -263,6 +263,16 @@ existing main.css), NOT a from-scratch rewrite.
        Also still pending: real contact-form endpoint (Formspree/HubSpot form)
        so submissions are actually delivered/captured.
 
+6.0  Dark-theme COMPARISON build (owner request). The live white site is the
+     default and is NOT changed. This is a separate page for comparison.
+     - NEW assets/css/site-dark.css: dark override (redefines color tokens +
+       the hard-coded light surfaces — cards, form, hero card, header, footer).
+     - NEW index-dark.html: exact copy of index.html that loads site.css then
+       site-dark.css (and analytics.js, same as the main page).
+     - Published to the fork for live comparison at:
+       https://zinelis.github.io/bizonlabs-website/index-dark.html
+     - index.html (white) remains the main site and is untouched by the theme.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
