@@ -237,6 +237,32 @@ existing main.css), NOT a from-scratch rewrite.
        drug-development audience).
      Not yet published (local only) pending owner approval.
 
+5.0  Analytics / engagement / CRM integration (owner choices: Umami + Microsoft
+     Clarity + HubSpot free CRM). Built locally, GUARDED with placeholder IDs so
+     nothing activates until real IDs are pasted. NOT yet published.
+     - NEW FILE assets/js/analytics.js — self-contained, no build step:
+        * Umami (cookieless) loads immediately once its Website ID is set.
+        * Microsoft Clarity + HubSpot (cookie-based) load ONLY after the visitor
+          clicks "Accept" in a consent banner; the banner only appears if at
+          least one of those two IDs is configured.
+        * Custom events sent to Umami: cta_click (all buttons/CTAs/mailto, via a
+          delegated listener), contact_submit (contact form), scroll_depth
+          (25/50/75/100%), consent_accept / consent_decline.
+        * Consent choice stored in localStorage ("bz_consent").
+     - site.css: added .bz-consent banner styles (+ mobile rules).
+     - privacy.html: added an "Analytics & Cookies" section describing the
+       cookieless analytics + the optional consent-gated tools.
+     - index.html, team.html, privacy.html: added
+       <script src="assets/js/analytics.js" defer></script> before </body>.
+     - Verified locally: banner renders correctly and the JS runs error-free
+       (temporarily enabled a test ID to confirm, then reverted to placeholder).
+     - OWNER ACTION NEEDED to activate (paste into analytics.js CONFIG):
+        1) Umami Website ID  (cloud.umami.is)
+        2) Clarity Project ID (clarity.microsoft.com)
+        3) HubSpot Portal/Hub ID (hubspot.com, free)
+       Also still pending: real contact-form endpoint (Formspree/HubSpot form)
+       so submissions are actually delivered/captured.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
