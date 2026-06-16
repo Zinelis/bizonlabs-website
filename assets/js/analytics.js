@@ -20,7 +20,7 @@
 	"use strict";
 
 	var CONFIG = {
-		umamiWebsiteId:   "REPLACE_WITH_UMAMI_WEBSITE_ID",     // e.g. "1a2b3c4d-...."
+		umamiWebsiteId:   "b2728fbc-30c1-4a23-8988-12b1d5e1a279", // Bizon Labs (cloud.umami.is)
 		umamiSrc:         "https://cloud.umami.is/script.js",  // change only if self-hosting
 		clarityProjectId: "REPLACE_WITH_CLARITY_PROJECT_ID",   // e.g. "abcde12345"
 		hubspotPortalId:  "REPLACE_WITH_HUBSPOT_PORTAL_ID"     // e.g. "12345678"

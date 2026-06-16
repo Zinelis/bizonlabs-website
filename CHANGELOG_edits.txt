@@ -312,6 +312,16 @@ existing main.css), NOT a from-scratch rewrite.
      mission band on both homepages (too visually heavy). Kept the mission
      statement, character chips, and the "THINK · BUILD" motto.
 
+8.0  Umami Cloud analytics ACTIVATED (owner created the account + website).
+     - analytics.js: umamiWebsiteId set to b2728fbc-30c1-4a23-8988-12b1d5e1a279
+       (website "Bizon Labs", registered domain bizonlabs.com in Umami; Umami's
+       domain field is only a label, so it also records the zinelis.github.io
+       preview). Cookieless -> loads with no consent banner.
+     - Tracks page views on index/index-dark/team/privacy plus custom events
+       already wired: cta_click, contact_submit, scroll_depth, consent_*.
+     - Clarity + HubSpot still inactive (their IDs not yet provided); the
+       consent banner stays hidden until one of those is configured.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
