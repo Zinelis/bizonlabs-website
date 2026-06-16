@@ -273,6 +273,16 @@ existing main.css), NOT a from-scratch rewrite.
        https://zinelis.github.io/bizonlabs-website/index-dark.html
      - index.html (white) remains the main site and is untouched by the theme.
 
+6.1  Dark theme refined to "charcoal grey + teal accent + real LNP imagery"
+     (Percepta-style), owner request. Still only affects index-dark.html.
+     - NEW images/lnp-tem.jpg: the owner's cryo-TEM micrograph of the LNPs,
+       scale bar cropped off and optimized for web (1024x860 JPEG, grayscale).
+     - site-dark.css: palette shifted from navy to warm charcoal greys
+       (--bg #111315, panels #1f2226, footer #0c0d0f); added the micrograph as a
+       SUBTLE hero background behind a strong charcoal gradient (text stays
+       crisp); kept the 3D LNP render on top; softened the teal hero glows.
+     - White site unchanged. Dark page updates at the same comparison URL.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint

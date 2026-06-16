@@ -7,19 +7,36 @@
    ========================================================================== */
 
 :root {
-	--ink:         #0c1730;
-	--ink-2:       #0a1226;
-	--text:        #aeb9c9;
-	--text-strong: #f2f6fb;
-	--muted:       #8595a8;
-	--bg:          #070c16;
-	--bg-soft:     #0d1424;
-	--bg-soft-2:   #141d31;
-	--border:      rgba(255, 255, 255, 0.10);
+	--ink:         #0c0d0f;   /* deepest grey (footer) */
+	--ink-2:       #0a0b0c;
+	--text:        #b4bcc6;   /* light grey body */
+	--text-strong: #f4f6f8;
+	--muted:       #8a929c;
+	--bg:          #111315;   /* charcoal base */
+	--bg-soft:     #17191c;
+	--bg-soft-2:   #1f2226;   /* raised panels */
+	--border:      rgba(255, 255, 255, 0.09);
 	--shadow-sm:   0 4px 14px rgba(0, 0, 0, 0.45);
 	--shadow:      0 18px 50px rgba(0, 0, 0, 0.55);
 	--shadow-lg:   0 30px 70px rgba(0, 0, 0, 0.65);
 }
+
+/* Hero: real cryo-TEM micrograph of the LNPs as a subtle texture behind a
+   strong charcoal gradient so the copy stays crisp. */
+.hero {
+	background-image:
+		linear-gradient(100deg,
+			rgba(17, 19, 21, 0.975) 0%,
+			rgba(17, 19, 21, 0.90) 42%,
+			rgba(17, 19, 21, 0.74) 100%),
+		url("../../images/lnp-tem.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/* a faint extra darkening at the very bottom for the seam into the stat bar */
+.hero::after { opacity: 0.45; }
+.hero::before { opacity: 0.5; }
 
 /* Surfaces that were hard-coded white -> raised dark panels */
 .card,
@@ -54,6 +71,3 @@
 /* Footer keeps a distinct dark navy so it separates from the body */
 .site-footer { background: var(--ink); border-top: 1px solid var(--border); }
 
-/* Soften the hero glows so they don't blow out on dark */
-.hero::before { opacity: 0.6; }
-.hero::after { opacity: 0.7; }
