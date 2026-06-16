@@ -64,6 +64,8 @@
 .eyebrow { color: var(--accent-bright); }
 .statement em { color: var(--accent-bright); }
 .cred .n { color: var(--accent-bright); }
+.belief svg { color: var(--accent-bright); }
+.motto { color: var(--accent-bright); }
 
 /* Card hover number badge slightly brighter */
 .card:hover .num-badge { color: rgba(24, 216, 185, 0.5); }

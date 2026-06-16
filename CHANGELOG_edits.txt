@@ -283,6 +283,31 @@ existing main.css), NOT a from-scratch rewrite.
        crisp); kept the 3D LNP render on top; softened the teal hero glows.
      - White site unchanged. Dark page updates at the same comparison URL.
 
+7.0  Core values / mission integration (owner request; source:
+     BizonLabs_corevalues.docx). Applied to BOTH white and dark homepages.
+     - Copy fix: "Moving into the storm" -> "Walking into the storm" in the
+       approach section of index.html and index-dark.html (matches the company
+       SPIRIT "Walk into the Storm").
+     - NEW "Our mission" + values band (id="mission") added between the
+       approach and applications sections of index.html and index-dark.html:
+         * Mission (DREAM): "Helping every patient get faster access to genetic
+           medicines."
+         * FOCUS woven into the lead ("We think and build at the edge of
+           science...") + a "THINK · BUILD" motto.
+         * "What we believe": curated outward-facing beliefs only -
+           Difficult problems are opportunities / Progress happens at the edge
+           of science / Trust is earned through transparency and delivery /
+           Practice makes progress.
+         * CHARACTER traits as chips: Unstoppable, Committed, Curious, Open,
+           Deliberate, Scientific, Trusted.
+     - team.html: added a one-line mission lead at the top of the story.
+     - site.css: new .mission/.beliefs/.belief/.values-chips/.motto styles.
+       site-dark.css: brighter teal for belief checks + motto on dark.
+     - INTENTIONALLY EXCLUDED from the public site: the Greatest Imaginable
+       Challenge ("3 in 3"), per the doc's note never to share it externally.
+       The internal/HR-oriented beliefs (ownership, celebrating success, team
+       culture) were also held back for a future Careers/Culture page.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
