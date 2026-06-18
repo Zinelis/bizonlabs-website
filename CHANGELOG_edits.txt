@@ -577,6 +577,27 @@ existing main.css), NOT a from-scratch rewrite.
      tokens only; no shared tokens or other files changed. Responsive (stacks
      under 820px). index-dark.html and the white site untouched.
 
+19.0 Step 4 (incremental pass): reserve the steel-blue accent for KEY NUMBERS.
+     Goal: make color signal importance. All decorative accent uses on the v2
+     draft were neutralized to ivory / muted / hairline so the numbers pop.
+     KEPT blue (intentional): stat-bar unit/suffixes (×, nm, "not months"),
+     the metric band suffixes (50+/1000+/100+/3×), the demo size readout number
+     (182), the interactive slider track/handle, and the single primary CTA
+     button fill (white text on steel blue).
+     NEUTRALIZED to ivory/muted/hairline: section eyebrows (text + leading
+     dash), the section-heading rule (now a hairline), the hero H1 ".grad"
+     emphasis (was a blue gradient, now ivory), the hero badge + ambient hero
+     glow/orbit rings, the brand wordmark "Labs" + nav hover, technology tile
+     icons + hover borders + "Learn more", solution icons + list-dash markers,
+     Why-Bizon-Labs section labels, FAQ open border + "+" toggle, modal check
+     chips + placeholder figure number, the specimen caption + tick, Insights
+     tag/links/hover/image wash, the contact email + FAQ answer links (now
+     ivory with an underline affordance), and the demo halo ring.
+     Implementation: one .v2-scoped override block appended to site-dark.css
+     (no shared tokens changed) + removed the one inline accent style on the
+     footer wordmark in index-dark-v2.html. index-dark.html keeps its richer
+     accenting; the white site is untouched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint

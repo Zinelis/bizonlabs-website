@@ -232,3 +232,78 @@
 
 @media (prefers-reduced-motion: reduce) { .v2 .demo-halo { animation: none; } }
 @media (max-width: 820px) { .v2 .demo-grid { grid-template-columns: 1fr; } }
+
+/* ======================================================================== */
+/* Step 4 (draft .v2): reserve the steel-blue accent for KEY NUMBERS         */
+/* (stat-bar suffixes, the metric band, and the demo size readout) plus the  */
+/* interactive slider control. Everything decorative becomes ivory / muted / */
+/* hairline so the numbers pop. .v2-scoped only — index-dark.html keeps its  */
+/* richer accenting and the white site is untouched.                         */
+/* ======================================================================== */
+
+/* Eyebrows: quiet muted micro-labels, not blue (text + leading dash) */
+.v2 .eyebrow { color: var(--muted); }
+.v2 .eyebrow::before { background: var(--muted); }
+/* Section-heading rule: subtle hairline instead of a bright blue bar */
+.v2 .section-head h2::after { background: var(--border); }
+
+/* Hero: neutral badge + neutral ambient glow / orbit (nothing reads blue) */
+.v2 .hero-badge { color: var(--text-strong); border-color: var(--border); background: rgba(255, 255, 255, 0.05); }
+.v2 .hero::before, .v2 .hero::after { background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 70%); }
+.v2 .hero-visual .glow { background: radial-gradient(circle, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 65%); }
+.v2 .hero-orbit span:nth-child(1), .v2 .hero-orbit span:nth-child(2) { border-color: rgba(255, 255, 255, 0.14); }
+
+/* Hero headline emphasis: ivory, not a blue gradient (only numbers read blue) */
+.v2 .hero h1 .grad { background: none; -webkit-text-fill-color: var(--text-strong); color: var(--text-strong); }
+
+/* Wordmark + nav hover: ivory, not blue */
+.v2 .brand b { color: var(--text-strong); }
+.v2 .nav-links a:hover { color: var(--text-strong); }
+
+/* Technology tiles: neutral icon wash, hairline hover, ivory "Learn more" */
+.v2 .tile .ico { background: rgba(255, 255, 255, 0.05); color: var(--text-strong); }
+.v2 .tile:hover { border-color: var(--border); }
+.v2 .tile-more { color: var(--text-strong); }
+
+/* Solutions: neutral icon + neutral list markers */
+.v2 .solution-ico { background: rgba(255, 255, 255, 0.05); color: var(--text-strong); }
+.v2 .solution-cta { color: var(--text-strong); }
+.v2 .ph-list li::before { color: var(--muted); }
+
+/* Why Bizon Labs: section labels muted (numbers in the band stay blue) */
+.v2 .why-label { color: var(--muted); }
+
+/* FAQ: hairline open border + muted "+" toggle */
+.v2 .faq-item[open] { border-color: var(--border); }
+.v2 .faq-item summary::after { color: var(--muted); }
+
+/* Modal pop-ups: neutral check chips + muted placeholder figure number */
+.v2 .modal-checks li::before { background: rgba(255, 255, 255, 0.06); }
+.v2 .modal-checks li::after { border-color: var(--muted); }
+.v2 .mv-num { color: var(--muted); }
+
+/* Specimen divider: ivory caption + neutral tick */
+.v2 .specimen-cap { color: var(--text-strong); }
+.v2 .specimen-tick { background: var(--muted); box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08); }
+
+/* Insights: muted tag, ivory links (underline on hover), hairline hover/img */
+.v2 .insight-tag { color: var(--muted); background: rgba(255, 255, 255, 0.04); }
+.v2 .insight-more { color: var(--text-strong); }
+.v2 .insight-all { color: var(--text-strong); }
+.v2 .insight-card:hover { border-color: var(--border); }
+.v2 .insight-img {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)),
+		repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0 10px, rgba(255, 255, 255, 0) 10px 20px);
+}
+
+/* Content links (contact email, FAQ answer link): ivory with an underline
+   affordance instead of blue, so links don't compete with the numbers. */
+.v2 .contact-meta a { color: var(--text-strong); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border); }
+.v2 .contact-meta a:hover { text-decoration-color: var(--muted); }
+.v2 .faq-item .a a { color: var(--text-strong); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border); }
+.v2 .faq-item .a a:hover { text-decoration-color: var(--muted); }
+
+/* Demo: KEEP the size readout number + slider control blue; neutralize the
+   decorative halo ring so the only blue here is the number and the control. */
+.v2 .demo-halo { stroke: rgba(255, 255, 255, 0.12); }
