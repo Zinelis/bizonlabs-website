@@ -387,6 +387,31 @@ existing main.css), NOT a from-scratch rewrite.
      muted slate-blue. Bronze chosen as the most distinctive + warm match to
      the TEM imagery.
 
+11.0 Draft (index-dark-v2.html) — de-clutter CTAs + design round (owner:
+     "remove any get in touch" + make it fresher/more unique).
+     CTA removals (cleaner, less salesy):
+       - Header nav "Get in touch" button removed; replaced with a plain
+         "Contact" text link in the nav (header still balanced).
+       - Hero secondary "Get in touch" ghost button removed (kept the single
+         primary "Explore the technology").
+       - The 3 Solution-box "Get in touch →" CTAs removed.
+       - The "Get in touch →" action row removed from all 4 Technology pop-ups
+         (panels are now purely informational).
+       - Mobile-menu "Get in touch" button -> plain "Contact" link.
+       - Contact SECTION kept (still reachable); its eyebrow renamed
+         "Get in touch" -> "05 — Contact".
+     Design round (scoped to the draft via <body class="v2">, so the live
+     index-dark.html is not restructured):
+       - Editorial numbered eyebrows: 01 Technology / 02 Solutions /
+         03 Why Bizon / 04 FAQ / 05 Contact.
+       - Small bronze accent rule under each section heading (.v2 .section-head
+         h2::after) for a designed, magazine-like rhythm.
+       - NEW cryo-TEM "specimen" divider band between Solutions and Why Bizon —
+         reuses images/lnp-tem.jpg as a distinctive editorial accent with a
+         glass caption pill ("Cryo-TEM · engineered lipid nanoparticles").
+       - Kept the Graphite & Champagne-Bronze palette from 10.0.
+     White site untouched; team still anonymous; LNP hero background kept.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint

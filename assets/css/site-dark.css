@@ -105,3 +105,37 @@
 
 /* Footer keeps the deepest graphite so it separates from the body */
 .site-footer { background: var(--ink); border-top: 1px solid var(--border); }
+
+/* ======================================================================== */
+/* Design round (draft .v2): editorial rhythm + cryo-TEM specimen divider    */
+/* ======================================================================== */
+
+/* Small bronze accent rule under each section heading — editorial craft */
+.v2 .section-head h2::after {
+	content: ""; display: block; width: 46px; height: 3px; margin: 20px auto 0;
+	background: linear-gradient(90deg, var(--accent-ink), var(--accent-bright));
+	border-radius: 3px;
+}
+
+/* Numbered eyebrows read a touch wider/lighter for a designed feel */
+.v2 .eyebrow { letter-spacing: 0.18em; }
+
+/* Cryo-TEM specimen divider band — reuses the real micrograph as an accent */
+.specimen {
+	position: relative; height: 210px; display: flex; align-items: center;
+	border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+	background-image:
+		linear-gradient(90deg, rgba(14,15,18,0.97) 0%, rgba(14,15,18,0.55) 50%, rgba(14,15,18,0.97) 100%),
+		url("../../images/lnp-tem.jpg");
+	background-size: cover; background-position: center 32%; background-repeat: no-repeat;
+}
+.specimen .container { display: flex; justify-content: center; }
+.specimen-cap {
+	display: inline-flex; align-items: center; gap: 12px;
+	font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+	color: var(--accent-bright);
+	background: rgba(14,15,18,0.55); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
+	border: 1px solid var(--border); border-radius: 100px; padding: 11px 22px;
+}
+.specimen-tick { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(194,137,90,0.18); }
+@media (max-width: 720px) { .specimen { height: 150px; } .specimen-cap { font-size: 0.7rem; padding: 9px 16px; } }
