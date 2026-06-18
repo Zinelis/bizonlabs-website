@@ -455,6 +455,31 @@ existing main.css), NOT a from-scratch rewrite.
      needed again. index-dark-v2.html remains the working draft; index-dark.html
      and the white site are unchanged.
 
+13.0 Dark theme re-palette: bronze -> MUTED STEEL BLUE ("Graphite & Steel").
+     Owner reverted to index-dark-v2.html as the base and rejected BOTH the
+     neon-teal and the champagne-bronze accents; chose a refined, restrained
+     Percepta-like steel blue on the same dark graphite base. Color-only pass —
+     v2's layout/structure is unchanged.
+     Edited assets/css/site-dark.css only (shared by index-dark.html AND
+     index-dark-v2.html, so both stay consistent — desired):
+       - Accent tokens: --accent #5b7da6 (muted steel blue),
+         --accent-bright #8fb0d4 (lighter, for eyebrows/links/figures/marks),
+         --accent-ink #3f5d82 (deeper, gradient start / hovers).
+       - Graphite neutrals (bg #0e0f12 / panels / ivory) kept as-is.
+       - Retinted every hard-coded bronze rgba glow/tint to the blue: hero
+         glows + orbit rings, brand dot, card/tile/solution icon tints, card/
+         app/faq hover borders, num-badge, step badge, modal checkmark chips,
+         section-heading accent rule, and the specimen divider tick.
+       - Primary button: switched from dark-ink-on-bronze to WHITE text on the
+         steel-blue fill; hover uses the deeper blue (--accent-ink from
+         site.css). Contrast verified.
+       - Kept cryo-TEM hero + v2 editorial touches (numbered eyebrows 01-05,
+         specimen divider) — recolored only.
+     No bronze hex/rgba remain (verified by grep). The white site
+     (index.html / team.html / privacy.html) does not link site-dark.css and
+     was not touched. Team stays anonymous; LNP imagery kept.
+     Preview: https://zinelis.github.io/bizonlabs-website/index-dark-v2.html
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint

@@ -1,10 +1,11 @@
 /* ==========================================================================
-   Bizon Labs — DARK THEME  ("Graphite & Champagne Bronze")
+   Bizon Labs — DARK THEME  ("Graphite & Muted Steel Blue")
    Load AFTER site.css. Overrides design tokens + the surfaces/accents that
    were hard-coded for the light teal theme.
    Goal: a distinctive, restrained, premium look (Percepta-inspired) that moves
-   away from the generic neon-teal startup palette, while keeping the real
-   cryo-TEM micrograph as the hero texture.
+   away from BOTH the generic neon-teal startup palette and the earlier
+   champagne-bronze, using a sophisticated desaturated steel blue, while
+   keeping the real cryo-TEM micrograph as the hero texture.
    Linked ONLY by index-dark.html and index-dark-v2.html — the white site
    (index.html / team.html / privacy.html) is unaffected.
    ========================================================================== */
@@ -24,10 +25,10 @@
 	--shadow:      0 18px 50px rgba(0, 0, 0, 0.60);
 	--shadow-lg:   0 30px 70px rgba(0, 0, 0, 0.70);
 
-	/* --- Champagne-bronze accent (replaces site.css teal on dark) --- */
-	--accent:        #c2895a;   /* bronze — buttons, marks */
-	--accent-bright: #dcae7d;   /* champagne — text accents/links on dark */
-	--accent-ink:    #a06c3f;   /* deep bronze — gradient start / hovers */
+	/* --- Muted steel-blue accent (replaces site.css teal on dark) --- */
+	--accent:        #5b7da6;   /* muted steel blue — buttons, marks */
+	--accent-bright: #8fb0d4;   /* lighter steel blue — text accents/links on dark */
+	--accent-ink:    #3f5d82;   /* deeper steel blue — gradient start / hovers */
 }
 
 /* Hero: real cryo-TEM micrograph of the LNPs as a subtle texture behind a
@@ -43,12 +44,12 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
-/* Retint the hero glows from teal/blue to warm bronze, kept subtle. */
-.hero::before { background: radial-gradient(circle at center, rgba(220, 174, 125, 0.16), rgba(220, 174, 125, 0) 70%); opacity: 0.55; }
-.hero::after  { background: radial-gradient(circle at center, rgba(160, 108, 63, 0.12), rgba(160, 108, 63, 0) 70%); opacity: 0.40; }
-.hero-visual .glow { background: radial-gradient(circle, rgba(220, 174, 125, 0.22), rgba(220, 174, 125, 0) 65%); }
+/* Hero glows kept subtle, tinted to the muted steel blue. */
+.hero::before { background: radial-gradient(circle at center, rgba(143, 176, 212, 0.16), rgba(143, 176, 212, 0) 70%); opacity: 0.55; }
+.hero::after  { background: radial-gradient(circle at center, rgba(63, 93, 130, 0.14), rgba(63, 93, 130, 0) 70%); opacity: 0.40; }
+.hero-visual .glow { background: radial-gradient(circle, rgba(143, 176, 212, 0.22), rgba(143, 176, 212, 0) 65%); }
 .hero-orbit span:nth-child(1),
-.hero-orbit span:nth-child(2) { border-color: rgba(220, 174, 125, 0.28); }
+.hero-orbit span:nth-child(2) { border-color: rgba(143, 176, 212, 0.28); }
 
 /* Surfaces that were hard-coded white -> raised dark panels */
 .card,
@@ -71,13 +72,13 @@
 .mobile-menu.open { background: var(--bg); border-bottom-color: var(--border); }
 .mobile-menu a { color: var(--text-strong); }
 
-/* Premium "gold" buttons: dark ink text on bronze for a luxe, high-contrast look */
-.btn--primary { color: #15110b; box-shadow: 0 10px 26px rgba(194, 137, 90, 0.26); }
-.btn--primary:hover { color: #15110b; box-shadow: 0 16px 34px rgba(194, 137, 90, 0.34); }
+/* Primary buttons: white text on the steel-blue fill; hover uses the deeper blue (from site.css) */
+.btn--primary { color: #fff; box-shadow: 0 10px 26px rgba(91, 125, 166, 0.30); }
+.btn--primary:hover { color: #fff; box-shadow: 0 16px 34px rgba(91, 125, 166, 0.38); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent-bright); }
 
-/* Accent TEXT reads as champagne on dark */
-.hero-badge { color: var(--accent-bright); border-color: rgba(220, 174, 125, 0.30); background: rgba(194, 137, 90, 0.12); }
+/* Accent TEXT reads as light steel blue on dark */
+.hero-badge { color: var(--accent-bright); border-color: rgba(143, 176, 212, 0.30); background: rgba(91, 125, 166, 0.12); }
 .eyebrow { color: var(--accent-bright); }
 .statement em { color: var(--accent-bright); }
 .cred .n { color: var(--accent-bright); }
@@ -90,18 +91,18 @@
 .nav-links a:hover { color: var(--accent-bright); }
 .brand b { color: var(--accent-bright); }
 
-/* Component glows/tints retinted from teal -> bronze */
-.brand .dot { box-shadow: 0 0 0 5px rgba(194, 137, 90, 0.16); }
-.card .ico { background: linear-gradient(135deg, rgba(194, 137, 90, 0.16), rgba(220, 174, 125, 0.10)); color: var(--accent-bright); }
-.card:hover { border-color: rgba(220, 174, 125, 0.40); }
-.card:hover .num-badge { color: rgba(220, 174, 125, 0.45); }
-.app:hover { border-color: rgba(220, 174, 125, 0.45); }
-.faq-item[open] { border-color: rgba(220, 174, 125, 0.40); }
-.step .k { box-shadow: 0 8px 20px rgba(194, 137, 90, 0.30); }
-.tile .ico { background: rgba(194, 137, 90, 0.12); color: var(--accent-bright); }
-.tile:hover { border-color: rgba(220, 174, 125, 0.45); }
-.solution-ico { background: rgba(194, 137, 90, 0.12); color: var(--accent-bright); }
-.modal-checks li::before { background: rgba(194, 137, 90, 0.16); }
+/* Component glows/tints retinted to muted steel blue */
+.brand .dot { box-shadow: 0 0 0 5px rgba(91, 125, 166, 0.18); }
+.card .ico { background: linear-gradient(135deg, rgba(91, 125, 166, 0.18), rgba(143, 176, 212, 0.10)); color: var(--accent-bright); }
+.card:hover { border-color: rgba(143, 176, 212, 0.40); }
+.card:hover .num-badge { color: rgba(143, 176, 212, 0.45); }
+.app:hover { border-color: rgba(143, 176, 212, 0.45); }
+.faq-item[open] { border-color: rgba(143, 176, 212, 0.40); }
+.step .k { box-shadow: 0 8px 20px rgba(91, 125, 166, 0.32); }
+.tile .ico { background: rgba(91, 125, 166, 0.14); color: var(--accent-bright); }
+.tile:hover { border-color: rgba(143, 176, 212, 0.45); }
+.solution-ico { background: rgba(91, 125, 166, 0.14); color: var(--accent-bright); }
+.modal-checks li::before { background: rgba(91, 125, 166, 0.18); }
 
 /* Footer keeps the deepest graphite so it separates from the body */
 .site-footer { background: var(--ink); border-top: 1px solid var(--border); }
@@ -110,7 +111,7 @@
 /* Design round (draft .v2): editorial rhythm + cryo-TEM specimen divider    */
 /* ======================================================================== */
 
-/* Small bronze accent rule under each section heading — editorial craft */
+/* Small steel-blue accent rule under each section heading — editorial craft */
 .v2 .section-head h2::after {
 	content: ""; display: block; width: 46px; height: 3px; margin: 20px auto 0;
 	background: linear-gradient(90deg, var(--accent-ink), var(--accent-bright));
@@ -137,5 +138,5 @@
 	background: rgba(14,15,18,0.55); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
 	border: 1px solid var(--border); border-radius: 100px; padding: 11px 22px;
 }
-.specimen-tick { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(194,137,90,0.18); }
+.specimen-tick { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(91,125,166,0.20); }
 @media (max-width: 720px) { .specimen { height: 150px; } .specimen-cap { font-size: 0.7rem; padding: 9px 16px; } }
