@@ -307,3 +307,16 @@
 /* Demo: KEEP the size readout number + slider control blue; neutralize the
    decorative halo ring so the only blue here is the number and the control. */
 .v2 .demo-halo { stroke: rgba(255, 255, 255, 0.12); }
+
+/* ======================================================================== */
+/* Step 5 (draft .v2): mission statement surfaced high on the page.          */
+/* A quiet, confident full-width band between the stat bar and Technology.   */
+/* Ivory text on graphite (it is text, not a number, so no accent).          */
+/* ======================================================================== */
+.v2 .mission-band { padding: clamp(60px, 10vh, 116px) 0; border-bottom: 1px solid var(--border); background: var(--bg); }
+.v2 .mission-band .eyebrow { margin-bottom: 22px; }
+.v2 .mission-line {
+	max-width: 980px; margin: 0;
+	font-size: clamp(1.6rem, 3.6vw, 2.85rem); line-height: 1.24;
+	font-weight: 700; letter-spacing: -0.025em; color: var(--text-strong);
+}

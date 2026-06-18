@@ -598,6 +598,25 @@ existing main.css), NOT a from-scratch rewrite.
      footer wordmark in index-dark-v2.html. index-dark.html keeps its richer
      accenting; the white site is untouched.
 
+20.0 Step 5 (incremental pass): surface the mission high on the page.
+     Added a slim full-width MISSION BAND between the stat bar and the
+     Technology section: a muted "Our mission" eyebrow above a large, restrained
+     ivory statement "Helping every patient get faster access to genetic
+     medicines." (left-aligned, generous whitespace, graphite background, not
+     shouty, no accent since it is text not a number).
+     De-duplication: the Why Bizon Labs > Mission block no longer repeats that
+     sentence verbatim. Its heading now leads with the supporting line ("We
+     think and build at the edge of science, turning the hardest problems in
+     lipid nanoparticle engineering into reliable, manufacturable progress.")
+     and a new body line expands on it ("That is how the mission above becomes
+     real: reliable, reproducible control over how medicines are made, batch
+     after batch, from the bench to manufacturing."), referencing the band
+     rather than echoing it.
+     New styles are .v2-scoped (.v2 .mission-band / .mission-line) in
+     site-dark.css; no shared tokens changed. Responsive via clamp(). No em
+     dashes. index-dark.html and the white site untouched; v2 layout otherwise
+     intact.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
