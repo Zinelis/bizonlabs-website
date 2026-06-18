@@ -143,16 +143,17 @@
 
 /* ======================================================================== */
 /* Consistent stat hierarchy (draft .v2):                                    */
-/*   value = ivory (--text-strong) · unit/suffix = steel blue (--accent-     */
-/*   bright) · caption/label = muted grey (--muted). Applied uniformly to    */
-/*   the hero floating cards, the stat bar, and the Why-Bizon-Labs metrics.  */
+/*   NUMBER/value = steel blue (--accent-bright) · unit/symbol/suffix         */
+/*   (×, +, nm, "not months") = ivory (--text-strong) · caption/label =       */
+/*   muted grey. Applied uniformly to the stat bar, the Why-Bizon-Labs        */
+/*   metric band, and (already matching) the slider demo readout.            */
 /* ======================================================================== */
 .v2 .stat .n,
 .v2 .hero-card .num,
-.v2 .cred .n { color: var(--text-strong); }
+.v2 .cred .n { color: var(--accent-bright); }
 .v2 .stat .n span,
 .v2 .hero-card .num span,
-.v2 .cred .n span { color: var(--accent-bright); font-weight: 800; }
+.v2 .cred .n span { color: var(--text-strong); font-weight: 800; }
 .v2 .stat .t,
 .v2 .hero-card .lbl,
 .v2 .cred .t { color: var(--muted); }
@@ -247,8 +248,8 @@
 /* Section-heading rule: subtle hairline instead of a bright blue bar */
 .v2 .section-head h2::after { background: var(--border); }
 
-/* Hero: neutral badge + neutral ambient glow / orbit (nothing reads blue) */
-.v2 .hero-badge { color: var(--text-strong); border-color: var(--border); background: rgba(255, 255, 255, 0.05); }
+/* Hero: blue label pill (text + dot) per request; ambient glow/orbit stay neutral */
+.v2 .hero-badge { color: var(--accent-bright); border-color: rgba(143, 176, 212, 0.35); background: rgba(91, 125, 166, 0.12); }
 .v2 .hero::before, .v2 .hero::after { background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 70%); }
 .v2 .hero-visual .glow { background: radial-gradient(circle, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 65%); }
 .v2 .hero-orbit span:nth-child(1), .v2 .hero-orbit span:nth-child(2) { border-color: rgba(255, 255, 255, 0.14); }

@@ -629,6 +629,22 @@ existing main.css), NOT a from-scratch rewrite.
      Mission is now stated only once (verified: 1 occurrence, the band).
      HTML-only change to index-dark-v2.html; nothing else touched.
 
+22.0 Flip stat coloring (numbers blue, units white) + blue hero badge.
+     Per request, flipped the step-4 stat rule: the NUMBER/value now reads
+     steel blue (--accent-bright) and the UNIT/SYMBOL/SUFFIX (×, +, nm, and
+     word-suffixes like "not months") reads ivory (--text-strong). Applied
+     uniformly via the .v2-scoped stat block to: the stat bar (3× / 40–450 nm /
+     Minutes / Days, where "Minutes"/"Days" are the value so they go blue and
+     "not months" goes ivory) and the Why-Bizon-Labs metric band (50+/1000+/
+     100+/3×). The slider demo readout already matched (size number blue via
+     .demo-v b, "nm" ivory via .demo-v), so it was left as is. Labels stay
+     muted. This is a deliberate exception to step 4's "accent on suffixes"
+     detail; the rest of step 4 (decorative elements neutralized) is unchanged.
+     Also re-blued the hero badge "Lipid nanoparticle engineering": the
+     .v2 .hero-badge override now uses --accent-bright text + dot with a subtle
+     blue border/wash (was neutralized in step 4). .v2-scoped only; shared
+     tokens, index-dark.html, and the white site untouched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
