@@ -522,6 +522,18 @@ existing main.css), NOT a from-scratch rewrite.
      the LNP visual + stat cards are unchanged. Hero copy only — no layout,
      color, other sections, or other files touched.
 
+16.0 Step 2 (incremental design pass) on index-dark-v2.html — two edits.
+     A) De-duped hero stats: removed the two floating .hero-card overlays
+        ("3× higher in vivo expression" and "40–450 nm tunable size range")
+        from .hero-visual, since they repeated the stat bar directly below.
+        Stat bar (3× / 40–450 nm / Minutes / Days) kept fully intact as the
+        single home for those numbers. Hero visual (LNP image + glow + orbit
+        rings) kept and still looks balanced — no CSS tweak needed.
+     B) Specimen divider caption trimmed: "Size and Morphology control of
+        LNPs" -> "Size and Morphology control" (aria-label updated to match).
+     Hero copy only otherwise unchanged; no palette/layout/other-section/other
+     -file changes. index-dark.html and the white site untouched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
