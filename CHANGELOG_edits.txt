@@ -534,6 +534,25 @@ existing main.css), NOT a from-scratch rewrite.
      Hero copy only otherwise unchanged; no palette/layout/other-section/other
      -file changes. index-dark.html and the white site untouched.
 
+17.0 Copy: reword hero line + scrub EM DASHES from the dark v2 draft.
+     PART 1: hero lead set to "Control the exact size and shape of every lipid
+     nanoparticle, reliably and at scale." (no em dash).
+     PART 2: removed EVERY em dash (U+2014) from index-dark-v2.html and the
+     insights.html placeholder, replacing each with natural punctuation
+     (comma, colon, period, or rephrase) chosen per sentence. EN DASHES
+     (U+2013) in numeric ranges (40–450 nm) were preserved. Verified by grep:
+     0 em dashes in both files; 2 en dashes still present in v2.
+     Notable rephrasings:
+       - FAQ "Who is the technology for?" split into two sentences ending
+         "...self-amplifying RNA. In short, anywhere reproducible,
+         high-performing LNPs matter."
+       - Paired em-dash asides (meta description, FAQ "What exactly...",
+         mission line) converted to comma-set clauses.
+       - <title>/og:title separators "Bizon Labs — ..." -> "Bizon Labs: ...".
+       - Bracketed editorial placeholders "[X — Y]" -> "[X: Y]".
+     Punctuation/wording only; no layout/structure/color/other-file changes.
+     The white site and index-dark.html were not touched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
