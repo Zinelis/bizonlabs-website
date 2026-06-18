@@ -645,6 +645,16 @@ existing main.css), NOT a from-scratch rewrite.
      blue border/wash (was neutralized in step 4). .v2-scoped only; shared
      tokens, index-dark.html, and the white site untouched.
 
+23.0 Blue specimen caption; more spacing above research metrics (.v2 only).
+     (1) The cryo-TEM specimen divider caption ("Size and Morphology control")
+     and its tick now read steel blue (--accent-bright) instead of the step-4
+     neutral ivory/muted; the dark blurred pill background is kept so the blue
+     stays readable over the micrograph. (2) Added breathing room above the
+     Research-foundation metric grid: ".v2 .why-body .cred-grid { margin-top:
+     32px; }" so the 50+/1000+/100+/3x boxes sit lower, clearly separated from
+     the heading/intro. Both .v2-scoped in site-dark.css; responsive layout,
+     index-dark.html, and the white site untouched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
