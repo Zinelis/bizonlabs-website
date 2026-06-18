@@ -412,6 +412,42 @@ existing main.css), NOT a from-scratch rewrite.
        - Kept the Graphite & Champagne-Bronze palette from 10.0.
      White site untouched; team still anonymous; LNP hero background kept.
 
+12.0 NEW concept page: index-dark-v3.html + assets/css/site-v3.css
+     ("Specimen 01"). Owner felt v2 still used the generic AI-startup pattern
+     (centered heading + 3/4-card grid, e.g. pixology.ai); wanted a
+     fundamentally UNIQUE, innovative layout — same sections/content, new
+     visual identity. v2 and all other pages are LEFT INTACT for comparison.
+     Self-contained stylesheet (no dependency on site.css/site-dark.css),
+     scoped to <body class="v3"> — cannot affect any other page.
+     What makes it fundamentally different from v2:
+       - Persistent LEFT SECTION-INDEX RAIL (fixed sidebar with the wordmark +
+         numbered index 01–05 that highlights the active section on scroll),
+         instead of a top nav + centered per-section headings.
+       - Swiss/lab-notebook EDITORIAL system: left-aligned asymmetric section
+         heads, oversized Inter display type, IBM Plex Mono micro-labels /
+         numeric indices, hairline rules, generous negative space.
+       - HERO: full-bleed cryo-TEM imagery with oversized overlaid type and an
+         inline hairline-divided stat band (no floating stat cards / two
+         buttons).
+       - TECHNOLOGY: asymmetric BENTO grid (big + stacked + wide tiles, "+"
+         expand affordance) instead of identical cards; still opens the large
+         pop-up panels.
+       - SOLUTIONS: editorial NUMBERED ROWS with hairline separators (not 3
+         centered cards).
+       - WHY BIZON: label/content rows + a full-bleed METRIC BAND with
+         oversized numbers (50+/1000+/100+/3x); team = anonymous placeholder
+         tiles with a TEM-masked block + role/index (no names/photos).
+       - FAQ: editorial accordion with numeric indices + custom +/- marks.
+       - CONTACT: split editorial (meta list + underline-style form); no
+         scattered "Get in touch" CTAs.
+       - Extra cryo-TEM "specimen" divider band.
+       - Motion: scroll-reveal + active-section spy (IntersectionObserver).
+     Color: evolved Graphite & Champagne-Bronze — --bg #0d0e11, panels
+     #16181d/#1c1f25, ivory ink #f4f2ee, hairlines rgba(255,255,255,.10),
+     accent bronze #c2895a / champagne #dcae7d. Cohesive, premium, non-generic.
+     index-dark-v2.html, index-dark.html and the white site are UNCHANGED.
+     Preview: https://zinelis.github.io/bizonlabs-website/index-dark-v3.html
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
