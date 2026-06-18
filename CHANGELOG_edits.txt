@@ -480,6 +480,39 @@ existing main.css), NOT a from-scratch rewrite.
      was not touched. Team stays anonymous; LNP imagery kept.
      Preview: https://zinelis.github.io/bizonlabs-website/index-dark-v2.html
 
+14.0 Draft (index-dark-v2.html) content/UX pass — 5 edits + Insights page.
+     Color-only steel-blue palette and v2 layout otherwise unchanged. The
+     white site (index.html/team.html/privacy.html) was not touched.
+     1) "Why Bizon" -> "Why Bizon Labs" (official name) for that section only:
+        nav link, mobile-menu link, section eyebrow, the "[... headline
+        placeholder]", and the footer Explore link. Other Bizon/Bizon Labs
+        mentions left as-is.
+     2) Removed editorial section NUMBERING from eyebrows ("01 — Technology"
+        ... "05 — Contact" -> "Technology" / "Solutions" / "Why Bizon Labs" /
+        "FAQ" / "Contact"). Numbers were inline text (no CSS counters); the
+        small accent rule under each heading is kept.
+     3) Specimen divider caption: "Cryo-TEM · engineered lipid nanoparticles"
+        -> "Size and Morphology control of LNPs" (aria-label updated too).
+     4) Consistent stat hierarchy across hero floating cards, the stat bar,
+        and the Why-Bizon-Labs metric band: value = ivory (--text-strong),
+        unit/suffix (×, nm, +, "not months") = steel blue (--accent-bright),
+        caption/label = muted grey (--muted). Wrapped the +/× suffixes in
+        <span> on the hero card and metric band; added a .v2-scoped rule block
+        in site-dark.css. Reads deliberate now, not random.
+     5) NEW "Insights" placeholder section (after FAQ, before Contact) — like
+        Lila/Percepta: eyebrow + headline + intro, 3 placeholder article cards
+        ([Image]/[Category]/[Article title]/[Date]/"Read more →", NO author
+        names) + a "View all insights →" link. Added an Insights link to the
+        header nav + mobile menu + footer. Created a lightweight placeholder
+        landing page insights.html (dark v2 style, same header/footer, 6
+        placeholder cards, "Back to home"); cards + "View all" link to it.
+        New .v2-scoped Insights component styles in site-dark.css. (Contact
+        section set to section--soft to preserve the soft/normal rhythm.)
+     index-dark.html is unaffected (new rules are .v2-scoped; shared accent
+     tokens unchanged). Team stays anonymous; cryo-TEM imagery kept.
+     Preview: https://zinelis.github.io/bizonlabs-website/index-dark-v2.html
+     Insights placeholder: https://zinelis.github.io/bizonlabs-website/insights.html
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
