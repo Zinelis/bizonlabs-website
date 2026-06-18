@@ -356,6 +356,16 @@ existing main.css), NOT a from-scratch rewrite.
      CSS: .modal upgraded (top-aligned, scrollable, modalIn scale animation),
      new .modal-card--lg / .modal-head / .modal-checks / .modal-visuals / .mv.
 
+9.2  "Why Bizon?" blocks filled with the real copy from the prior dark
+     version (owner request): Mission ("Helping every patient get faster
+     access to genetic medicines" + statement), Our approach ("Walking into
+     the storm…" + bison paragraph), Research foundation ("Backed by deep,
+     peer-reviewed science" + description) and the 4 metrics.
+     - Citations corrected to 1000+ EVERYWHERE (index-dark-v2.html, index.html,
+       index-dark.html, team.html prose) — factual update from 800+.
+     - Removed the "Team kept anonymous at this stage…" note from the draft.
+     - "Why Bizon?" section headline/intro left as placeholders (not requested).
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
