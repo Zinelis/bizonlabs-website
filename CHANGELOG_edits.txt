@@ -617,6 +617,18 @@ existing main.css), NOT a from-scratch rewrite.
      dashes. index-dark.html and the white site untouched; v2 layout otherwise
      intact.
 
+21.0 Remove duplicate mission block from Why Bizon Labs. The mission appeared
+     twice (the prominent full-width mission band high on the page AND a
+     "Mission" sub-block inside Why Bizon Labs). Kept the band; removed the
+     redundant Why-section Mission why-block entirely (label + the "We think
+     and build at the edge of science..." heading + the "That is how the
+     mission above becomes real..." line, both added in step 5). The section
+     now flows: section head, Our approach, Research foundation (metrics), Team.
+     No leftover container/gap: ".why-block:first-of-type" already drops the
+     top border + padding, so "Our approach" becomes the clean first block.
+     Mission is now stated only once (verified: 1 occurrence, the band).
+     HTML-only change to index-dark-v2.html; nothing else touched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
