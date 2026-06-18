@@ -513,6 +513,15 @@ existing main.css), NOT a from-scratch rewrite.
      Preview: https://zinelis.github.io/bizonlabs-website/index-dark-v2.html
      Insights placeholder: https://zinelis.github.io/bizonlabs-website/insights.html
 
+15.0 Step 1 (incremental design pass) — tighten HERO copy on
+     index-dark-v2.html. Replaced the hero lead "We precisely tune lipid
+     nanoparticle size and morphology — giving development teams reproducible
+     control over how genetic medicines are made." with one crisp outcome-led
+     line: "Control the exact size and shape of every lipid nanoparticle —
+     reliably, at scale." H1 headline, badge, primary CTA, MIT trust line, and
+     the LNP visual + stat cards are unchanged. Hero copy only — no layout,
+     color, other sections, or other files touched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
