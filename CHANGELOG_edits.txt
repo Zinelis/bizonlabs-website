@@ -366,6 +366,27 @@ existing main.css), NOT a from-scratch rewrite.
      - Removed the "Team kept anonymous at this stage…" note from the draft.
      - "Why Bizon?" section headline/intro left as placeholders (not requested).
 
+10.0 Dark theme re-palette: "Graphite & Champagne Bronze" (owner felt the
+     charcoal + neon-teal look was generic, ref pixology.ai; wanted something
+     more unique/premium, Percepta-inspired). Affects ONLY the dark pages
+     (index-dark.html + index-dark-v2.html) — the white site is untouched
+     (it does not link site-dark.css). Rationale: a warm metallic bronze accent
+     on a near-black graphite base is restrained + distinctive (not the default
+     startup teal) and harmonizes with the greyscale cryo-TEM hero image.
+     site-dark.css changes:
+       - Neutrals: --bg #0e0f12, --bg-soft #14161a, --bg-soft-2 #1c1e23,
+         --ink #08090b, --text #b6b8bf, --text-strong #f3f1ee (warm ivory).
+       - Accent (overrides site.css teal on dark only): --accent #c2895a,
+         --accent-bright #dcae7d (champagne), --accent-ink #a06c3f.
+       - Primary buttons now use dark ink text on bronze (luxe "gold button").
+       - Every hard-coded teal glow/tint from site.css retinted to bronze
+         (hero glows, orbit rings, card/app/faq/tile/solution icons + hovers,
+         modal checks, brand dot, step badges).
+       - Hero gradient overlay updated to the new graphite base.
+     Alternatives considered (not shipped): deep indigo/electric-blue accent;
+     muted slate-blue. Bronze chosen as the most distinctive + warm match to
+     the TEM imagery.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
