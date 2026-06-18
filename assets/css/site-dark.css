@@ -67,6 +67,12 @@
 .belief svg { color: var(--accent-bright); }
 .motto { color: var(--accent-bright); }
 
+/* Draft v2 components: brighter teal accents on charcoal */
+.tile-more,
+.solution-cta,
+.why-label,
+.modal-fig { color: var(--accent-bright); }
+
 /* Card hover number badge slightly brighter */
 .card:hover .num-badge { color: rgba(24, 216, 185, 0.5); }
 

@@ -322,6 +322,32 @@ existing main.css), NOT a from-scratch rewrite.
      - Clarity + HubSpot still inactive (their IDs not yet provided); the
        consent banner stays hidden until one of those is configured.
 
+9.0  NEW draft layout: index-dark-v2.html (owner-proposed restructure of the
+     dark version). This is a DRAFT page only — the live index-dark.html and
+     the white index.html are untouched. Built as a layout skeleton with
+     clearly labeled [placeholders] to fill with real content later.
+     Section order:
+       A. Hero / intro  — kept from the dark version, intro text shortened.
+       B. Technology    — Stripe-style clickable tiles that open POP-UP windows
+                          (modals) holding a key figure + image + description
+                          (all placeholders for now). 4 tiles.
+       C. Solutions     — "How to engage", Lila Industries-style 3 boxes:
+                          Co-development / Platform access / Development
+                          services (placeholder copy + "Get in touch" CTA).
+       D. Why Bizon?    — combined section: Mission -> Approach -> Research
+                          foundation -> Team, stacked with labels (placeholders).
+                          Team stays ANONYMOUS: avatar placeholders, roles only,
+                          no names/photos.
+       E. FAQ           — kept identical to the current dark version.
+       F. Get in touch  — kept identical to the current dark version.
+     No real showcase (delta v / R2E) per the "keep anonymous" instruction.
+     CSS: appended draft-v2 components to site.css (.tile/.modal/.solutions/
+     .why-*/.team-card); these are new classes not used by the live pages.
+     site-dark.css: brighter teal accents for the new components.
+     JS: small modal open/close (click + Esc + backdrop) inline in the page.
+     Preview URL once pushed:
+       https://zinelis.github.io/bizonlabs-website/index-dark-v2.html
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint

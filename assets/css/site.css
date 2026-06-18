@@ -382,3 +382,81 @@ ul { margin: 0; padding: 0; }
 	.cred-grid { grid-template-columns: 1fr 1fr; }
 	.form .row { grid-template-columns: 1fr; }
 }
+
+/* ======================================================================== */
+/* Draft v2 layout components (used by index-dark-v2.html)                  */
+/* ======================================================================== */
+
+/* Placeholder marker — makes "to be filled" content obvious */
+.ph { color: var(--muted); }
+
+/* --- B. Technology tiles (Stripe-style, clickable -> modal) ------------- */
+.tech-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.tile {
+	text-align: left; font: inherit; color: inherit; cursor: pointer;
+	background: var(--bg-soft-2); border: 1px solid var(--border); border-radius: var(--radius);
+	padding: 30px 26px; min-height: 230px; display: flex; flex-direction: column; gap: 10px;
+	transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.tile:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--accent); }
+.tile .ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: rgba(15,191,163,.12); color: var(--accent); margin-bottom: 4px; }
+.tile .ico svg { width: 24px; height: 24px; }
+.tile h3 { font-size: 1.1rem; margin: 0; }
+.tile p { font-size: .96rem; color: var(--muted); margin: 0; flex: 1; }
+.tile-more { font-size: .9rem; font-weight: 600; color: var(--accent-ink); margin-top: 8px; }
+
+/* --- Pop-up windows (modals) ------------------------------------------- */
+.modal { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 24px; }
+.modal[hidden] { display: none; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.62); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+.modal-card {
+	position: relative; z-index: 1; width: 100%; max-width: 560px; max-height: 86vh; overflow: auto;
+	background: var(--bg-soft-2); border: 1px solid var(--border); border-radius: var(--radius);
+	padding: 40px; box-shadow: var(--shadow-lg);
+}
+.modal-close { position: absolute; top: 12px; right: 16px; background: none; border: 0; color: var(--muted); font-size: 2rem; line-height: 1; cursor: pointer; }
+.modal-close:hover { color: var(--text-strong); }
+.modal-card h3 { font-size: 1.5rem; }
+.modal-fig { font-size: 1.5rem; font-weight: 800; color: var(--accent-ink); margin: 6px 0 16px; }
+.modal-img { height: 200px; display: grid; place-items: center; font-size: .92rem; margin-bottom: 16px; border: 1px dashed var(--border); border-radius: var(--radius-sm); background: rgba(127,127,127,.06); }
+body.modal-open { overflow: hidden; }
+
+/* --- C. Solutions (Lila Industries-style, 3 boxes) --------------------- */
+.solutions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.solution { background: var(--bg-soft-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 38px 32px; display: flex; flex-direction: column; gap: 12px; transition: transform .18s ease, box-shadow .2s ease; }
+.solution:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.solution-ico { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; background: rgba(15,191,163,.12); color: var(--accent); }
+.solution-ico svg { width: 26px; height: 26px; }
+.solution h3 { font-size: 1.3rem; margin: 4px 0 0; }
+.solution p { color: var(--muted); margin: 0; }
+.ph-list { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 9px; }
+.ph-list li { color: var(--muted); font-size: .95rem; padding-left: 18px; position: relative; }
+.ph-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+.solution-cta { margin-top: auto; padding-top: 16px; font-weight: 600; color: var(--accent-ink); }
+
+/* --- D. Why Bizon? (combined: mission/approach/research/team) ---------- */
+.why-block { display: grid; grid-template-columns: 200px 1fr; gap: 30px; padding: 34px 0; border-top: 1px solid var(--border); }
+.why-block:first-of-type { border-top: 0; padding-top: 6px; }
+.why-label { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-ink); padding-top: 6px; }
+.why-body h3 { font-size: 1.5rem; }
+.why-body p { margin: 0; }
+.why-team { padding-top: 34px; border-top: 1px solid var(--border); }
+.why-team .why-label { margin-bottom: 22px; }
+.team-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.team-card { background: var(--bg-soft-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px 22px; text-align: center; }
+.team-card .avatar { width: 86px; height: 86px; border-radius: 50%; margin: 0 auto 16px; display: grid; place-items: center; color: var(--muted); font-size: .8rem; border: 1px dashed var(--border); background: rgba(127,127,127,.06); }
+.team-card h4 { margin: 0 0 4px; font-size: 1.05rem; }
+.team-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+.anon-note { text-align: center; color: var(--muted); font-size: .9rem; margin: 24px 0 0; }
+
+@media (max-width: 980px) {
+	.tech-tiles { grid-template-columns: repeat(2, 1fr); }
+	.solutions { grid-template-columns: 1fr; }
+	.team-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+	.tech-tiles { grid-template-columns: 1fr; }
+	.why-block { grid-template-columns: 1fr; gap: 10px; }
+	.team-cards { grid-template-columns: 1fr; }
+	.modal-card { padding: 28px 22px; }
+}
