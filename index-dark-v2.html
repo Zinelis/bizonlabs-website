@@ -121,6 +121,49 @@
 					<span class="tile-more">Learn more →</span>
 				</button>
 			</div>
+
+			<!-- Interactive size & morphology demo (illustrative) -->
+			<div class="demo reveal" aria-labelledby="demoTitle">
+				<div class="demo-head">
+					<span class="eyebrow">See the control</span>
+					<h3 id="demoTitle">Precision, made tangible</h3>
+					<p class="demo-cap">Drag to explore how we tune particle size and morphology. Illustrative, representative of the tunable range.</p>
+				</div>
+				<div class="demo-grid">
+					<div class="demo-stage">
+						<svg class="demo-svg" viewBox="0 0 320 320" role="img" aria-label="Animated lipid nanoparticle that scales with the selected size">
+							<defs>
+								<radialGradient id="lnpFill" cx="38%" cy="34%" r="72%">
+									<stop offset="0%" stop-color="#cfe0f2" />
+									<stop offset="45%" stop-color="#8fb0d4" />
+									<stop offset="100%" stop-color="#3f5d82" />
+								</radialGradient>
+								<filter id="lnpGlow" x="-60%" y="-60%" width="220%" height="220%">
+									<feGaussianBlur stdDeviation="5" result="b" />
+									<feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+								</filter>
+							</defs>
+							<circle class="demo-halo" cx="160" cy="160" r="128" />
+							<path id="lnpShape" class="demo-particle" d="" filter="url(#lnpGlow)" fill="url(#lnpFill)" />
+						</svg>
+						<div class="demo-scalebar" aria-hidden="true"><span class="demo-scalebar-fill" id="scaleFill"></span></div>
+					</div>
+					<div class="demo-panel">
+						<div class="demo-readout">
+							<div class="demo-metric"><span class="demo-k">Size</span><span class="demo-v"><b id="sizeVal">182</b> nm</span></div>
+							<div class="demo-metric"><span class="demo-k">Morphology</span><span class="demo-v" id="morphVal" aria-live="polite">Near-spherical</span></div>
+						</div>
+						<input id="sizeSlider" class="demo-slider" type="range" min="40" max="450" value="182" step="1" aria-label="Particle size in nanometers" aria-valuemin="40" aria-valuemax="450" aria-valuenow="182" />
+						<div class="demo-range-labels" aria-hidden="true"><span>40 nm</span><span>450 nm</span></div>
+						<div class="demo-presets" role="group" aria-label="Size presets">
+							<button type="button" class="demo-chip" data-size="60">Small, ~60 nm</button>
+							<button type="button" class="demo-chip" data-size="200">Mid, ~200 nm</button>
+							<button type="button" class="demo-chip" data-size="400">Large, ~400 nm</button>
+						</div>
+						<p class="demo-note">Illustrative, representative of tunable range. Visuals to be refined with real data.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -507,6 +550,86 @@
 			el.addEventListener('click', closeAllModals);
 		});
 		document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAllModals(); });
+
+		// Interactive size & morphology demo (illustrative)
+		(function () {
+			var slider = document.getElementById('sizeSlider');
+			if (!slider) return;
+			var sizeVal = document.getElementById('sizeVal');
+			var morphVal = document.getElementById('morphVal');
+			var shape = document.getElementById('lnpShape');
+			var scaleFill = document.getElementById('scaleFill');
+			var cx = 160, cy = 160, N = 56, MIN = 40, MAX = 450;
+
+			// Deterministic per-vertex noise so the blob shape is stable, not jittery.
+			var noise = [], seed = 17;
+			for (var i = 0; i < N; i++) { seed = (seed * 9301 + 49297) % 233280; noise.push((seed / 233280) * 2 - 1); }
+
+			function map(v, a, b, c, d) { return c + (d - c) * ((v - a) / (b - a)); }
+
+			function smoothPath(pts) {
+				var n = pts.length, d = '';
+				for (var i = 0; i < n; i++) {
+					var p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+					if (i === 0) d += 'M' + p1[0].toFixed(1) + ',' + p1[1].toFixed(1);
+					var c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+					var c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
+					d += 'C' + c1x.toFixed(1) + ',' + c1y.toFixed(1) + ' ' + c2x.toFixed(1) + ',' + c2y.toFixed(1) + ' ' + p2[0].toFixed(1) + ',' + p2[1].toFixed(1);
+				}
+				return d + 'Z';
+			}
+
+			function buildPath(size) {
+				var baseR = map(size, MIN, MAX, 28, 120);
+				var morph = Math.max(0, Math.min(1, (size - 200) / (MAX - 200)));
+				var amp = baseR * 0.17 * morph;
+				var pts = [];
+				for (var i = 0; i < N; i++) {
+					var ang = (i / N) * Math.PI * 2;
+					var n = noise[i] * 0.6 + Math.sin(ang * 3 + 1.2) * 0.4;
+					var r = baseR + amp * n;
+					pts.push([cx + r * Math.cos(ang), cy + r * Math.sin(ang)]);
+				}
+				return smoothPath(pts);
+			}
+
+			function morphLabel(size) {
+				if (size < 180) return 'Spherical';
+				if (size <= 300) return 'Near-spherical';
+				return 'Blebbed';
+			}
+
+			function update() {
+				var size = parseInt(slider.value, 10);
+				sizeVal.textContent = size;
+				morphVal.textContent = morphLabel(size);
+				shape.setAttribute('d', buildPath(size));
+				slider.setAttribute('aria-valuenow', size);
+				var pct = ((size - MIN) / (MAX - MIN)) * 100;
+				slider.style.setProperty('--pct', pct.toFixed(1) + '%');
+				if (scaleFill) scaleFill.style.width = pct.toFixed(1) + '%';
+			}
+
+			var raf = null;
+			function animateTo(target) {
+				if (raf) cancelAnimationFrame(raf);
+				var start = parseInt(slider.value, 10), t0 = null, dur = 360;
+				function step(t) {
+					if (t0 === null) t0 = t;
+					var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+					slider.value = Math.round(start + (target - start) * e);
+					update();
+					if (k < 1) raf = requestAnimationFrame(step);
+				}
+				raf = requestAnimationFrame(step);
+			}
+
+			slider.addEventListener('input', function () { if (raf) { cancelAnimationFrame(raf); raf = null; } update(); });
+			document.querySelectorAll('.demo-chip').forEach(function (c) {
+				c.addEventListener('click', function () { animateTo(parseInt(c.getAttribute('data-size'), 10)); });
+			});
+			update();
+		})();
 	</script>
 	<script src="assets/js/analytics.js" defer></script>
 

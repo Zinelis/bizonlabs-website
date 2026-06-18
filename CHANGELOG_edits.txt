@@ -553,6 +553,30 @@ existing main.css), NOT a from-scratch rewrite.
      Punctuation/wording only; no layout/structure/color/other-file changes.
      The white site and index-dark.html were not touched.
 
+18.0 Step 3 (incremental pass): interactive size & morphology demo on
+     index-dark-v2.html. The signature "show, don't tell" element.
+     Placement: inside the Technology section, right after the four tiles.
+     Component ("Precision, made tangible", eyebrow "See the control"):
+       - A range slider (40 to 450 nm), aria-labelled, with --pct-driven
+         steel-blue track fill and a custom accent handle.
+       - An inline SVG particle that scales smoothly with the value (nm mapped
+         to a bounded on-screen radius, 28 to 120 px, so 40 nm stays visible
+         and 450 nm fits). The shape is a smooth closed Catmull-Rom blob built
+         from deterministic per-vertex noise so it is stable, not jittery.
+       - Morphology cue tied to size: a growing surface-deformation amplitude
+         (smooth/spherical when small, gentle blebbing when large) plus a label
+         that changes Spherical -> Near-spherical -> Blebbed.
+       - Live readout: "Size <n> nm" and "Morphology <label>" (aria-live), a
+         scale bar, and 3 preset chips (Small ~60, Mid ~200, Large ~400) that
+         animate the slider via requestAnimationFrame easing.
+       - A slowly rotating dashed halo ring (disabled under
+         prefers-reduced-motion). Clearly labelled ILLUSTRATIVE / representative
+         of the tunable range; visuals to be refined with real data.
+     Vanilla JS added to the existing inline <script> (no libraries). All
+     styles are .v2-scoped in site-dark.css (.v2 .demo-*), using existing
+     tokens only; no shared tokens or other files changed. Responsive (stacks
+     under 820px). index-dark.html and the white site untouched.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
