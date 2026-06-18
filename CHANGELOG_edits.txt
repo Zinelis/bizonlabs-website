@@ -448,6 +448,13 @@ existing main.css), NOT a from-scratch rewrite.
      index-dark-v2.html, index-dark.html and the white site are UNCHANGED.
      Preview: https://zinelis.github.io/bizonlabs-website/index-dark-v3.html
 
+12.1 REVERTED v3 "Specimen 01" concept (removed at owner's request).
+     Deleted index-dark-v3.html and assets/css/site-v3.css. The concept was
+     standalone (self-contained stylesheet, scoped to body.v3) so removal
+     affects nothing else; it remains in git history (commit 1b65b0e) if ever
+     needed again. index-dark-v2.html remains the working draft; index-dark.html
+     and the white site are unchanged.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint
