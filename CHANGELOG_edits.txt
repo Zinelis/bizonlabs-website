@@ -348,6 +348,14 @@ existing main.css), NOT a from-scratch rewrite.
      Preview URL once pushed:
        https://zinelis.github.io/bizonlabs-website/index-dark-v2.html
 
+9.1  Technology pop-ups reworked into large Stripe-style panels (owner ref:
+     Stripe "Payments" expand-card). Each tile now opens a wide immersive
+     panel (max 1040px) that scales open, containing: title + subhead +
+     two CTAs (left), a checklist of key points (right), and a row of large
+     visual cards (image/mockup + key-figure + chart) — all placeholders.
+     CSS: .modal upgraded (top-aligned, scrollable, modalIn scale animation),
+     new .modal-card--lg / .modal-head / .modal-checks / .modal-visuals / .mv.
+
 ------------------------------------------------------------------------------
 Still pending (next steps):
   - ACTION NEEDED FROM OWNER (round 2): set a real contact-form endpoint

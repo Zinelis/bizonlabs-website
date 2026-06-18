@@ -405,21 +405,44 @@ ul { margin: 0; padding: 0; }
 .tile p { font-size: .96rem; color: var(--muted); margin: 0; flex: 1; }
 .tile-more { font-size: .9rem; font-weight: 600; color: var(--accent-ink); margin-top: 8px; }
 
-/* --- Pop-up windows (modals) ------------------------------------------- */
-.modal { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 24px; }
+/* --- Pop-up windows (large Stripe-style panels) ------------------------ */
+.modal { position: fixed; inset: 0; z-index: 200; display: grid; align-items: start; justify-items: center; padding: 5vh 18px; overflow-y: auto; }
 .modal[hidden] { display: none; }
-.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.62); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.66); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
 .modal-card {
-	position: relative; z-index: 1; width: 100%; max-width: 560px; max-height: 86vh; overflow: auto;
-	background: var(--bg-soft-2); border: 1px solid var(--border); border-radius: var(--radius);
+	position: relative; z-index: 1; width: 100%; max-width: 560px;
+	background: var(--bg-soft-2); border: 1px solid var(--border); border-radius: 20px;
 	padding: 40px; box-shadow: var(--shadow-lg);
+	animation: modalIn .3s cubic-bezier(.2,.7,.25,1) both;
 }
-.modal-close { position: absolute; top: 12px; right: 16px; background: none; border: 0; color: var(--muted); font-size: 2rem; line-height: 1; cursor: pointer; }
-.modal-close:hover { color: var(--text-strong); }
-.modal-card h3 { font-size: 1.5rem; }
-.modal-fig { font-size: 1.5rem; font-weight: 800; color: var(--accent-ink); margin: 6px 0 16px; }
-.modal-img { height: 200px; display: grid; place-items: center; font-size: .92rem; margin-bottom: 16px; border: 1px dashed var(--border); border-radius: var(--radius-sm); background: rgba(127,127,127,.06); }
+@keyframes modalIn { from { opacity: 0; transform: scale(.93) translateY(16px); } to { opacity: 1; transform: none; } }
+.modal-close { position: absolute; top: 18px; right: 18px; z-index: 2; width: 38px; height: 38px; border-radius: 10px; background: rgba(127,127,127,.12); border: 0; color: var(--text); font-size: 1.5rem; line-height: 1; cursor: pointer; display: grid; place-items: center; transition: background .2s ease, color .2s ease; }
+.modal-close:hover { background: rgba(127,127,127,.22); color: var(--text-strong); }
 body.modal-open { overflow: hidden; }
+
+/* Large variant — opens into an immersive panel */
+.modal-card--lg { max-width: 1040px; padding: 0; overflow: hidden; }
+.modal-head { display: grid; grid-template-columns: 1.45fr 1fr; gap: 44px; padding: 54px 54px 30px; }
+.modal-head h3 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 6px 0 12px; }
+.modal-head-copy > p { color: var(--muted); margin: 0 0 22px; font-size: 1.05rem; }
+.modal-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.modal-checks { list-style: none; display: grid; gap: 15px; align-content: start; padding-top: 46px; margin: 0; }
+.modal-checks li { position: relative; padding-left: 30px; color: var(--text); font-weight: 500; }
+.modal-checks li::before { content: ""; position: absolute; left: 0; top: 2px; width: 19px; height: 19px; border-radius: 50%; background: rgba(15,191,163,.16); }
+.modal-checks li::after { content: ""; position: absolute; left: 6.5px; top: 6px; width: 5px; height: 9px; border: solid var(--accent); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.modal-visuals { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; padding: 0 54px 54px; }
+.mv { border: 1px dashed var(--border); border-radius: 16px; background: rgba(127,127,127,.06); display: grid; place-items: center; align-content: center; text-align: center; gap: 6px; padding: 24px; color: var(--muted); min-height: 240px; }
+.mv--main { min-height: 420px; }
+.mv-col { display: grid; gap: 20px; grid-template-rows: auto 1fr; }
+.mv-num { font-size: 2.8rem; font-weight: 800; color: var(--accent-ink); line-height: 1; }
+.mv-cap { font-size: .92rem; }
+@media (max-width: 860px) {
+	.modal { padding: 3vh 12px; }
+	.modal-head { grid-template-columns: 1fr; gap: 22px; padding: 44px 24px 20px; }
+	.modal-checks { padding-top: 0; }
+	.modal-visuals { grid-template-columns: 1fr; padding: 0 24px 36px; }
+	.mv--main, .mv { min-height: 200px; }
+}
 
 /* --- C. Solutions (Lila Industries-style, 3 boxes) --------------------- */
 .solutions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

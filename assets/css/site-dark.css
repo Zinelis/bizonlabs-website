@@ -71,7 +71,7 @@
 .tile-more,
 .solution-cta,
 .why-label,
-.modal-fig { color: var(--accent-bright); }
+.mv-num { color: var(--accent-bright); }
 
 /* Card hover number badge slightly brighter */
 .card:hover .num-badge { color: rgba(24, 216, 185, 0.5); }
